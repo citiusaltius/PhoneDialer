@@ -63,10 +63,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\UI\ButtonBehaviourBackspace.cs" />
-    <Compile Include="Assets\UI\ButtonBehaviourCall.cs" />
-    <Compile Include="Assets\UI\GameObjectBehaviourForcePortrait.cs" />
-    <Compile Include="Assets\UI\PhoneKeypadButtonBehaviour.cs" />
+    <Compile Include="Assets\Scripts\Data\DataStore.cs" />
+    <Compile Include="Assets\Scripts\Data\Defines.cs" />
+    <Compile Include="Assets\Scripts\Scenes\SceneSwitcher.cs" />
+    <Compile Include="Assets\Scripts\UI\BackScreenBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonAboutBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonBehaviourBackspace.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonBehaviourCall.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonBehaviourMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonBehaviourQuit.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonBehaviourSendAnEmail.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonHistoryBehaviour.cs" />
+    <Compile Include="Assets\Scripts\UI\ButtonLoginBehaviour.cs" />
+    <Compile Include="Assets\Scripts\UI\GameObjectBehaviourForcePortrait.cs" />
+    <Compile Include="Assets\Scripts\UI\PhoneKeypadButtonBehaviour.cs" />
+    <Compile Include="Assets\Scripts\UI\ScrollViewBehaviourHistory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
