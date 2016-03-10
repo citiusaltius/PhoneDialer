@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/ScenePhoneDialer.unity
+- path: Assets/Scenes/SceneAbout.unity
   isLoaded: 1
   isActive: 1
