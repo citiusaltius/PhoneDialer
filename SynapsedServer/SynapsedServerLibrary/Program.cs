@@ -12,9 +12,6 @@ namespace SynapsedServerLibrary
         static void Main(string[] args)
         {
 
-            Debug.SetNewSynchronizationContext();
-            Debug.WriteLine(SynapsedServerLibrary.Defines.Global.UtcNowDateTimeFormatAmz());
-
         }
     }
 }
