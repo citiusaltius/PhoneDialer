@@ -16,7 +16,7 @@ public class ButtonBehaviourSendAnEmail : MonoBehaviour {
     public void OnClick()
     {
         string email = "me@aiwong.com";
-        string subject = MyEscapeURL("Re: Grady / Emory / Atlanta VA dialer");
+        string subject = MyEscapeURL("Re: VEG dialer");
         string body = MyEscapeURL(" ");
         Application.OpenURL("mailto:" + email + "?subject=" + subject + "&body=" + body);
     }
