@@ -20,7 +20,7 @@ namespace Assets.Scripts.UI
 
         public void OnClick()
         {
-
+            Utilities.Debug.WriteLine("register.");
         }
     }
 }
