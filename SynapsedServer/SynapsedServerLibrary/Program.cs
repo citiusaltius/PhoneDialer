@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SynapsedServerLibrary.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,10 @@ namespace SynapsedServerLibrary
     {
         static void Main(string[] args)
         {
+
+            Debug.SetNewSynchronizationContext();
+            Debug.WriteLine(SynapsedServerLibrary.Defines.Global.UtcNowDateTimeFormatAmz());
+
         }
     }
 }

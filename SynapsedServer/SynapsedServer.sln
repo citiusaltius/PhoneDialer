@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynapsedServer", "SynapsedServer\SynapsedServer.csproj", "{3CFA8ED6-1F9B-4BD4-94C7-1589813A2EB9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{71E665D0-B2CA-4559-A0D9-E8743B27528F} = {71E665D0-B2CA-4559-A0D9-E8743B27528F}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SynapsedServerLibrary", "SynapsedServerLibrary\SynapsedServerLibrary.csproj", "{71E665D0-B2CA-4559-A0D9-E8743B27528F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{3CFA8ED6-1F9B-4BD4-94C7-1589813A2EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CFA8ED6-1F9B-4BD4-94C7-1589813A2EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CFA8ED6-1F9B-4BD4-94C7-1589813A2EB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71E665D0-B2CA-4559-A0D9-E8743B27528F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71E665D0-B2CA-4559-A0D9-E8743B27528F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71E665D0-B2CA-4559-A0D9-E8743B27528F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71E665D0-B2CA-4559-A0D9-E8743B27528F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
