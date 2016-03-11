@@ -1,10 +1,10 @@
 server {
     listen       80;
     server_name  52.9.134.236;
-    root /var/www/nancydemo;
+    root /git/phonedialer/website;
 
     location /Content/ {
-        alias /var/www/nancydemo/Content/;
+        alias /git/phonedialer/website/content/;
         location ~*  \.(jpg|jpeg|png|gif|ico|css|js|ttf)$ {
             expires 365d;
         }
