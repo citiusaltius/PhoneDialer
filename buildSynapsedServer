@@ -3,4 +3,4 @@
 xbuild /t:Build ./SynapsedServer/SynapsedServer/SynapsedServer.csproj
 echo '===============================';
 
-mono ./SynapsedServer/bin/Debug/SynapsedServer.exe
+mono ./SynapsedServer/SynapsedServer/bin/Debug/SynapsedServer.exe
