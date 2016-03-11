@@ -1,0 +1,6 @@
+#!/bin/bash
+
+xbuild /t:Build ./SynapsedServer/SynapsedServer/SynapsedServer.csproj
+echo '===============================';
+
+mono ./SynapsedServer/bin/Debug/SynapsedServer.exe
