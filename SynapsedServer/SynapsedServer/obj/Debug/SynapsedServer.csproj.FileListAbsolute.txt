@@ -25,3 +25,6 @@ G:\Git\PhoneDialer\SynapsedServer\SynapsedServer\obj\Debug\SynapsedServer.exe
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServer\obj\Debug\SynapsedServer.pdb
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServer\bin\Debug\SynapsedServerLibrary.exe
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServer\bin\Debug\SynapsedServerLibrary.pdb
+C:\git\PhoneDialer\SynapsedServer\SynapsedServer\bin\Debug\SynapsedServer.exe.config
+C:\git\PhoneDialer\SynapsedServer\SynapsedServer\obj\Debug\SynapsedServer.exe
+C:\git\PhoneDialer\SynapsedServer\SynapsedServer\obj\Debug\SynapsedServer.pdb
