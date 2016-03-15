@@ -41,6 +41,10 @@
       <HintPath>..\packages\AWSSDK.Core.3.1.4.3\lib\net45\AWSSDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="AWSSDK.DynamoDBv2, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.DynamoDBv2.3.1.3.0\lib\net45\AWSSDK.DynamoDBv2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="AWSSDK.S3, Version=3.1.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>..\packages\AWSSDK.S3.3.1.3.13\lib\net45\AWSSDK.S3.dll</HintPath>
       <Private>True</Private>
@@ -66,10 +70,18 @@
   <ItemGroup>
     <Compile Include="Base\BaseObject.cs" />
     <Compile Include="Defines\Global.cs" />
+    <Compile Include="Model\DataObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables\Accessors\Communities.cs" />
+    <Compile Include="Tables\Accessors\CommunityMemberships.cs" />
+    <Compile Include="Tables\Accessors\ContactMethods.cs" />
+    <Compile Include="Tables\Accessors\Entities.cs" />
+    <Compile Include="Tables\Accessors\Identities.cs" />
+    <Compile Include="Tables\Accessors\SecurityInformations.cs" />
+    <Compile Include="Tables\Accessors\TableCounters.cs" />
     <Compile Include="Tables\Accessors\TableObject.cs" />
+    <Compile Include="Tables\Accessors\UserDevices.cs" />
     <Compile Include="Tables\Defines\DefinitionsCommunities.cs" />
     <Compile Include="Tables\Defines\DefinitionsCommunityMemberships.cs" />
     <Compile Include="Tables\Defines\DefinitionsContactMethods.cs" />
@@ -89,13 +101,12 @@
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\AWSSDK.CognitoIdentity.3.1.0.7\analyzers\dotnet\cs\AWSSDK.CognitoIdentity.CodeAnalysis.dll" />
+    <Analyzer Include="..\packages\AWSSDK.DynamoDBv2.3.1.3.0\analyzers\dotnet\cs\AWSSDK.DynamoDBv2.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.S3.3.1.3.13\analyzers\dotnet\cs\AWSSDK.S3.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.1.1.2\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.SQS.3.1.0.6\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

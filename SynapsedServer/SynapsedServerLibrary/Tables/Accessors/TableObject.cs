@@ -22,11 +22,11 @@ namespace SynapsedServerLibrary.Tables.Accessors
             int NewId = TableCounterClient.GetAndIncrement(TableName);
 
             // Update Object first
-            string TimestampCreation = Defines.Global.UtcNowDateTimeFormatAmz();
+            string TimestampCreation = SynapsedServerLibrary.Defines.Global.UtcNowDateTimeFormatAmz();
             ObjectIn.TimestampCreation = (TimestampCreation);
             ObjectIn.TimestampModified = (TimestampCreation);
-            ObjectIn.DataVersion = Defines.Global.DataVersionCurrent;
-            ObjectIn.ModifiedByEntityId = Defines.Global.ServerDaemonEntityId;
+            ObjectIn.DataVersion = SynapsedServerLibrary.Defines.Global.DataVersionCurrent;
+            ObjectIn.ModifiedByEntityId = SynapsedServerLibrary.Defines.Global.ServerDaemonEntityId;
             req.TableName = TableName;
 
             req.Item = ObjectIn.ConvertToItem();
@@ -51,8 +51,8 @@ namespace SynapsedServerLibrary.Tables.Accessors
             Debug.WriteLine("===" + System.Reflection.MethodBase.GetCurrentMethod().ReflectedType.FullName + "===");
 
             //Update item first
-            ObjectIn.ModifiedByEntityId = Defines.Global.ServerDaemonEntityId;
-            ObjectIn.TimestampModified = Defines.Global.UtcNowDateTimeFormatAmz();
+            ObjectIn.ModifiedByEntityId = SynapsedServerLibrary.Defines.Global.ServerDaemonEntityId;
+            ObjectIn.TimestampModified = SynapsedServerLibrary.Defines.Global.UtcNowDateTimeFormatAmz();
 
             Dictionary<string, System.Reflection.PropertyInfo> Properties = ObjectIn.GetProperties();
             dynamic TableDefinition = (Properties["ThisTableDefinition"].GetValue(ObjectIn));
