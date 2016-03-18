@@ -143,11 +143,12 @@ namespace SynapsedServerLibrary.Tables.Accessors
             req.Key = new Dictionary<string, AttributeValue>();
             req.Key.Add(TableDefinition.Index, Item[TableDefinition.Index]);
             Debug.WriteLine("Req key: " + req.Key.Count);
+            Debug.WriteLine("Is Hash & Range: " + ThisTableDefinition.IsHashAndRange);
             if (ThisTableDefinition.IsHashAndRange == true)
             {
                 req.Key.Add(TableDefinition.Range, Item[TableDefinition.Range]);
             }
-            Debug.WriteLine("Is Hash & Range: " + ThisTableDefinition.IsHashAndRange);
+            
             req.TableName = TableDefinition.TableName;
             try
             {
