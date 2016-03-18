@@ -140,7 +140,9 @@ namespace SynapsedServerLibrary.Tables.Accessors
                 TableDefinition.Index + "\t" + Item[TableDefinition.Index].N);
             Debug.WriteLine("Table name: " + TableDefinition.TableName);
 
+            req.Key = new Dictionary<string, AttributeValue>();
             req.Key.Add(TableDefinition.Index, Item[TableDefinition.Index]);
+            Debug.WriteLine("Req key: " + req.Key.Count);
             if (ThisTableDefinition.IsHashAndRange == true)
             {
                 req.Key.Add(TableDefinition.Range, Item[TableDefinition.Range]);

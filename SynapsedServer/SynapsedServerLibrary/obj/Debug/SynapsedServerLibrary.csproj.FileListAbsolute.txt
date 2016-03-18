@@ -21,3 +21,4 @@ G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\obj\Debug\SynapsedServer
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\bin\Debug\AWSSDK.DynamoDBv2.dll
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\bin\Debug\AWSSDK.DynamoDBv2.pdb
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\bin\Debug\AWSSDK.DynamoDBv2.xml
+G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\obj\Debug\SynapsedServerLibrary.csprojResolveAssemblyReference.cache
