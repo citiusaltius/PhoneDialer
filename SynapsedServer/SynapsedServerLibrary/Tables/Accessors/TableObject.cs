@@ -145,6 +145,7 @@ namespace SynapsedServerLibrary.Tables.Accessors
             {
                 req.Key.Add(TableDefinition.Range, Item[TableDefinition.Range]);
             }
+            Debug.WriteLine("Is Hash & Range: " + ThisTableDefinition.IsHashAndRange);
             req.TableName = TableDefinition.TableName;
             try
             {
