@@ -8,6 +8,7 @@ namespace SynapsedServerLibrary.Tables.Model
     public class Community : DataObject
     {
         private DefinitionsCommunities _ThisTableDefinition = new DefinitionsCommunities();
+
         public new DefinitionsCommunities ThisTableDefinition
         {
             get

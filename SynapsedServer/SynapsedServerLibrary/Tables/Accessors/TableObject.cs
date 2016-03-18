@@ -136,8 +136,9 @@ namespace SynapsedServerLibrary.Tables.Accessors
             DeleteItemResponse resp;
 
             Dictionary<string, AttributeValue> Item = ObjectIn.ConvertToItem();
-            Debug.WriteLine(TableDefinition.Index);
-            Debug.WriteLine(Item[TableDefinition.Index].N);
+            Debug.WriteLine(
+                TableDefinition.Index + "\t" + Item[TableDefinition.Index].N);
+            Debug.WriteLine("Table name: " + TableDefinition.TableName);
 
             req.Key.Add(TableDefinition.Index, Item[TableDefinition.Index]);
             if (ThisTableDefinition.IsHashAndRange == true)

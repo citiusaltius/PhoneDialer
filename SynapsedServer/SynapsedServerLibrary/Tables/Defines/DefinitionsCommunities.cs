@@ -10,6 +10,7 @@ namespace SynapsedServerLibrary.Tables.Defines
         public new string   Index = "CommunityId";
         public const string FieldNameCommunityName = "CommunityName";
         public const string FieldNameCommunityType = "CommunityType";
+        public new bool IsHashAndRange = false;
 
         public enum CommunityTypes : int
         {

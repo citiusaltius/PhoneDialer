@@ -150,6 +150,7 @@ namespace SynapsedServer
             Debug.WriteLine(Retrieved.PrintProperties());
 
             List<SynapsedServerLibrary.Tables.Model.Community> AllCommunities = Client.GetAll();
+            Debug.WriteLine("Listing communities");
             foreach (SynapsedServerLibrary.Tables.Model.Community ACommunity in AllCommunities)
             {
                 Debug.WriteLine(ACommunity.PrintProperties());
