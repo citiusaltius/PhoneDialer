@@ -1,4 +1,3 @@
-G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\obj\Debug\SynapsedServerLibrary.csprojResolveAssemblyReference.cache
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\bin\Debug\SynapsedServerLibrary.exe.config
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\bin\Debug\SynapsedServerLibrary.exe
 G:\Git\PhoneDialer\SynapsedServer\SynapsedServerLibrary\bin\Debug\SynapsedServerLibrary.pdb
