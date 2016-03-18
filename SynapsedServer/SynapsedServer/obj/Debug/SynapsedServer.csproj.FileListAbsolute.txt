@@ -28,3 +28,6 @@ G:\Git\PhoneDialer\SynapsedServer\SynapsedServer\bin\Debug\SynapsedServerLibrary
 C:\git\PhoneDialer\SynapsedServer\SynapsedServer\bin\Debug\SynapsedServer.exe.config
 C:\git\PhoneDialer\SynapsedServer\SynapsedServer\obj\Debug\SynapsedServer.exe
 C:\git\PhoneDialer\SynapsedServer\SynapsedServer\obj\Debug\SynapsedServer.pdb
+G:\Git\PhoneDialer\SynapsedServer\SynapsedServer\bin\Debug\AWSSDK.DynamoDBv2.dll
+G:\Git\PhoneDialer\SynapsedServer\SynapsedServer\bin\Debug\AWSSDK.DynamoDBv2.pdb
+G:\Git\PhoneDialer\SynapsedServer\SynapsedServer\bin\Debug\AWSSDK.DynamoDBv2.xml

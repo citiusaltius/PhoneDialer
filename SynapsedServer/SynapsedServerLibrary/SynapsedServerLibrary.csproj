@@ -70,7 +70,9 @@
   <ItemGroup>
     <Compile Include="Base\BaseObject.cs" />
     <Compile Include="Defines\Global.cs" />
-    <Compile Include="Model\DataObject.cs" />
+    <Compile Include="Tables\Model\CommunityMembership.cs" />
+    <Compile Include="Tables\Model\ContactMethod.cs" />
+    <Compile Include="Tables\Model\DataObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tables\Accessors\Communities.cs" />
@@ -91,6 +93,11 @@
     <Compile Include="Tables\Defines\DefinitionsTableCounter.cs" />
     <Compile Include="Tables\Defines\DefinitionsUserDevices.cs" />
     <Compile Include="Tables\Defines\TableDefinitions.cs" />
+    <Compile Include="Tables\Model\Community.cs" />
+    <Compile Include="Tables\Model\Entity.cs" />
+    <Compile Include="Tables\Model\Identity.cs" />
+    <Compile Include="Tables\Model\SecurityInformation.cs" />
+    <Compile Include="Tables\Model\UserDevice.cs" />
     <Compile Include="Utilities\Debug.cs" />
     <Compile Include="Utilities\Exceptions\ServerException.cs" />
     <Compile Include="Utilities\SimpleJSON.cs" />
@@ -106,7 +113,9 @@
     <Analyzer Include="..\packages\AWSSDK.SecurityToken.3.1.1.2\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
     <Analyzer Include="..\packages\AWSSDK.SQS.3.1.0.6\analyzers\dotnet\cs\AWSSDK.SQS.CodeAnalysis.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
