@@ -73,6 +73,7 @@
   <ItemGroup>
     <Compile Include="NancyModules\IndexModule.cs" />
     <Compile Include="NancyModules\MainWebApi.cs" />
+    <Compile Include="NancyModules\RegisterModule.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests.cs" />

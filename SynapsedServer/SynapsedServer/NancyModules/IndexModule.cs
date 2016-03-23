@@ -19,10 +19,10 @@ namespace SynapsedServer.NancyModules
                 <html>
                 <body>
                 <br /> <a href=""/"">index</a> <br /> 
-                <h1> index </h1>
+                <h1> synapsed </h1>
                 <br /> 
 
-                Root module here
+                Welcome to <i>synapsed</i>, your connection to the interconnections in medicine.
                 <br/> <a href=""/register"">register</a> <br/>
                 <br/> <a href=""/login"">login</a> <br/> 
 

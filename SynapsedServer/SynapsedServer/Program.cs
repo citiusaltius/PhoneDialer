@@ -16,14 +16,14 @@ namespace SynapsedServer
 
             Tests Tester = new Tests();
 
-            Tester.TestTableCounter();
+            //Tester.TestTableCounter();
 
-            Tester.TestCommunities();
-            Tester.TestCommunityMemberships();
-            Tester.TestContactMethods();
-            Tester.TestEntities();
-            Tester.TestIdentities();
-            Tester.TestSecurityInformation();
+            //Tester.TestCommunities();
+            //Tester.TestCommunityMemberships();
+            //Tester.TestContactMethods();
+            //Tester.TestEntities();
+            //Tester.TestIdentities();
+            //Tester.TestSecurityInformation();
 
 
             NancyModules.MainWebApi MainApi = new NancyModules.MainWebApi();

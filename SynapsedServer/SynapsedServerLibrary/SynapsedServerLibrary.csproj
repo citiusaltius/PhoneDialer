@@ -68,8 +68,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthenticationAndIdentity\Defines\CognitoIdentity.cs" />
+    <Compile Include="AuthenticationAndIdentity\Defines\SecurityToken.cs" />
+    <Compile Include="AuthenticationAndIdentity\Model\CognitoIdentity.cs" />
+    <Compile Include="AuthenticationAndIdentity\Model\SecurityToken.cs" />
+    <Compile Include="AuthenticationAndIdentity\Model\ServerCredentials.cs" />
     <Compile Include="Base\BaseObject.cs" />
     <Compile Include="Defines\Global.cs" />
+    <Compile Include="Security\Hashing.cs" />
+    <Compile Include="Security\UniqueKeyGenerator.cs" />
     <Compile Include="Tables\Model\CommunityMembership.cs" />
     <Compile Include="Tables\Model\ContactMethod.cs" />
     <Compile Include="Tables\Model\DataObject.cs" />
