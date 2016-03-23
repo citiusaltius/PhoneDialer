@@ -144,9 +144,9 @@ namespace SynapsedServerLibrary.Tables.Accessors
             req.Key.Add(TableDefinition.Index, Item[TableDefinition.Index]);
             Debug.WriteLine("Req key: " + req.Key.Count);
             Debug.WriteLine("Is Hash & Range: ");
-            Debug.WriteLine("" + ThisTableDefinition.IsHashAndRange);
+            Debug.WriteLine("value: " + TableDefinition.IsHashAndRange);
             Debug.WriteLine("check complete");
-            if (ThisTableDefinition.IsHashAndRange != null && ThisTableDefinition.IsHashAndRange == true)
+            if (TableDefinition.IsHashAndRange != null && TableDefinition.IsHashAndRange == true)
             {
                 req.Key.Add(TableDefinition.Range, Item[TableDefinition.Range]);
             }
