@@ -71,6 +71,7 @@
     <Compile Include="AuthenticationAndIdentity\Defines\CognitoIdentity.cs" />
     <Compile Include="AuthenticationAndIdentity\Defines\SecurityToken.cs" />
     <Compile Include="AuthenticationAndIdentity\Model\CognitoIdentity.cs" />
+    <Compile Include="AuthenticationAndIdentity\Model\IdentityIdOpenIdToken.cs" />
     <Compile Include="AuthenticationAndIdentity\Model\SecurityToken.cs" />
     <Compile Include="AuthenticationAndIdentity\Model\ServerCredentials.cs" />
     <Compile Include="Base\BaseObject.cs" />
