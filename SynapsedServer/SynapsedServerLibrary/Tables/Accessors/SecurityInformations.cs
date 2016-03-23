@@ -16,8 +16,8 @@ namespace SynapsedServerLibrary.Tables.Accessors
             Debug.WriteLine("===SecurityInformation.Create===");
             // Request new SecurityInformationId
             TableCounters TableCountersClient = new TableCounters();
-            int NewSecurityInformationId = TableCountersClient.GetAndIncrement(ThisTableDefinition.TableName);
-            ObjectIn.SecurityInformationId = (NewSecurityInformationId);
+            //int NewSecurityInformationId = TableCountersClient.GetAndIncrement(ThisTableDefinition.TableName);
+            //ObjectIn.SecurityInformationId = (NewSecurityInformationId);
             return (Model.SecurityInfo)Create(ObjectIn, ThisTableDefinition.TableName);
         }
 

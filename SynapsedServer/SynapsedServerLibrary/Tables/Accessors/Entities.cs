@@ -24,8 +24,8 @@ namespace SynapsedServerLibrary.Tables.Accessors
             Debug.WriteLine("===Entities.CreateEntity===");
             PutItemRequest req = new PutItemRequest();
             TableCounters TableCounterClient = new TableCounters();
-            int NewEntityId = TableCounterClient.GetAndIncrement(ThisTableDefinition.TableName);
-            ObjectIn.EntityId = (NewEntityId);
+            //int NewEntityId = TableCounterClient.GetAndIncrement(ThisTableDefinition.TableName);
+            //ObjectIn.EntityId = (NewEntityId);
             return (Model.Entity)base.Create(ObjectIn, ThisTableDefinition.TableName);
         }
 

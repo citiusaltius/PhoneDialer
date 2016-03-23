@@ -16,8 +16,8 @@ namespace SynapsedServerLibrary.Tables.Accessors
             Debug.WriteLine("===Identities.CreateCommunity===");
             // Request new IdentityId
             TableCounters TableCountersClient = new TableCounters();
-            int NewIdentityId = TableCountersClient.GetAndIncrement(ThisTableDefinition.TableName);
-            ObjectIn.IdentityId = (NewIdentityId);
+            //int NewIdentityId = TableCountersClient.GetAndIncrement(ThisTableDefinition.TableName);
+            //ObjectIn.IdentityId = (NewIdentityId);
             return (Model.Identity)Create(ObjectIn, ThisTableDefinition.TableName);
         }
 

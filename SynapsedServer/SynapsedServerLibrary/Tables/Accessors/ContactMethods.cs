@@ -20,8 +20,8 @@ namespace SynapsedServerLibrary.Tables.Accessors
             Debug.WriteLine("===ContactMethods.Create===");
             TableCounters TableCounterClient = new TableCounters();
             //Debug.WriteLine("TableName: '" + ThisTableDefinition.TableName + "'");
-            int NewContactMethodId = TableCounterClient.GetAndIncrement(ThisTableDefinition.TableName);
-            ObjectIn.ContactMethodId = (NewContactMethodId);
+            //int NewContactMethodId = TableCounterClient.GetAndIncrement(ThisTableDefinition.TableName);
+            //ObjectIn.ContactMethodId = (NewContactMethodId);
             ObjectIn.TimestampExpiration = (SynapsedServerLibrary.Defines.Global.UtcNowDateTimePlusTimeFormatAmz(SynapsedServerLibrary.Defines.Global.ExpirationTimespanDefault));
 
             return (Model.ContactMethod)base.Create(ObjectIn, ThisTableDefinition.TableName);

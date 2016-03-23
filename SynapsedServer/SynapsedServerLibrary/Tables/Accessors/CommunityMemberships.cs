@@ -14,9 +14,9 @@ namespace SynapsedServerLibrary.Tables.Accessors
         {
             Debug.WriteLine("===CommunityMemberships.Create===");
             // Request new CommunityId
-            TableCounters TableCounterClient = new TableCounters();
-            int NewCommunityMembershipId = TableCounterClient.GetAndIncrement(ThisTableDefinition.TableName);
-            ObjectIn.SetCommunityMembershipId(NewCommunityMembershipId);
+            //TableCounters TableCounterClient = new TableCounters();
+            //int NewCommunityMembershipId = TableCounterClient.GetAndIncrement(ThisTableDefinition.TableName);
+            //ObjectIn.SetCommunityMembershipId(NewCommunityMembershipId);
 
             return (Model.CommunityMembership)Create(ObjectIn, ThisTableDefinition.TableName);
         }
