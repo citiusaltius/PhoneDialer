@@ -11,7 +11,8 @@ namespace Assets.Scripts.Scenes
             ScenePhoneDialer,
             SceneHistory,
             SceneMenu,
-            SceneAbout
+            SceneAbout,
+            SceneDirectory
         };
         static List<string> SceneNamesEnumToString = new List<string>();
 
@@ -40,10 +41,17 @@ namespace Assets.Scripts.Scenes
 
         public static void BackScene()
         {
-            // Save the current scene
-            string LastScene = SceneHistory.Peek().ToString();
-            SceneHistory.Push(EnumFromSceneName(SceneManager.GetActiveScene().name));
-            SceneManager.LoadScene(LastScene);
+            if(SceneHistory.Count > 0)
+            {
+                // Save the current scene
+                string LastScene = SceneHistory.Peek().ToString();
+                SceneHistory.Push(EnumFromSceneName(SceneManager.GetActiveScene().name));
+                SceneManager.LoadScene(LastScene);
+            }
+            else
+            {
+                SwitchScene(SceneNames.ScenePhoneDialer);
+            }
         }
     }
 }

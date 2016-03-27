@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Assets.Scripts.Data
 {
-    class DataStore
+    public class DataStore
     {
+        public static Model.DirectoryEntry EntryToCall;
+
+
     }
 }
