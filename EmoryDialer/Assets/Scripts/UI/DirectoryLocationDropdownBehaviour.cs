@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
 
 public class DirectoryLocationDropdownBehaviour : MonoBehaviour {
 
@@ -19,11 +19,14 @@ public class DirectoryLocationDropdownBehaviour : MonoBehaviour {
     void PopulateOptions()
     {
         DirectoryLocationDropdown.ClearOptions();
-        for(int i = 0; i < 10; i++)
+        List<string> Locations = new List<string>() { "Grady", "Emory", "VA" };
+        Dropdown.OptionData BaseOption = new Dropdown.OptionData("---please select---");
+        DirectoryLocationDropdown.options.Add(BaseOption);
+        for (int i = 0; i < Locations.Count; i++)
         {
             Assets.Scripts.UI.DirectoryLocationDropdownOptionData Temp = new Assets.Scripts.UI.DirectoryLocationDropdownOptionData();
-            Temp.text = "test option " + i + "\n" + "subtext";
-            Temp.LocationUniqueIdentifier = "value " + i;
+            Temp.text = Locations[i];
+            Temp.LocationUniqueIdentifier = Locations[i] + ".identifier";
             DirectoryLocationDropdown.options.Add(Temp);
         }
         

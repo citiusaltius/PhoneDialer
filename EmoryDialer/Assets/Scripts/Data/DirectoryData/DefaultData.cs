@@ -15,8 +15,8 @@ pharmacy, inpatient	pharmacy		54118	14046164118
 Outpatient	pharmacy		54115	
 Outpatient	pharmacy		54117	
 Outpatient Weekends	pharmacy		54105	
-MICU	pharmacy		2830587	
-Marina Rabinovich	pharmacy		2788079	
+MICU	pharmacy			14042830587
+Marina Rabinovich	pharmacy			14042788079
 Senior Pharmacy	pharmacy		55079	
 ortho tech		daytime only		14047467517
 housekeeping		M-F	53131	14046163131
@@ -68,10 +68,10 @@ MRI	Radiology		56794	14046166794
 MRI	Radiology		56762	14046166762
 MRI Body Read Room	Radiology		56768	14046166768
 MRI Neuro Read Room	Radiology		56767	14046166767
-Mammo	Radiology		9925	
-Nuclear Med	Radiology		4602	
-Nuclear Med	Radiology	(read)	1825	
-PET	Radiology		549216	
+Mammo	Radiology		59925	
+Nuclear Med	Radiology		54602	
+Nuclear Med	Radiology	(read)	51825	
+PET	Radiology		49216	
 Ultrasound	Radiology		54519	
 Ultrasound Read Room	Radiology		54521	
 Ultrasound Read Room	Radiology		51935	
@@ -97,8 +97,8 @@ Respiratory Ther. (ICU)	Critical Care			14047433780
 Diabetes Educator	Wards	(M-F)	55325	
 Telemetry	Wards		58211	
 Dialysis	Wards		54710	
-Dialysis	Wards		54699	
-EKG	Wards		54441	
+Dialysis	Wards		54699	" + "\n" +
+@"EKG	Wards		54441	
 EKG	Wards			14042070255
 EPIC help	Wards		54357	
 Home Health RN	Wards		58648	
@@ -118,7 +118,7 @@ Outpatient	Wards	PT | OT |ST	54076
 Pain Clinic	Wards		55522	
 Psych Clinic 	Wards		54794	
 Rad/Onc Clinic	Wards		53947	
-Surgery Clinic	Wards		5428	
+Surgery Clinic	Wards		55428	
 Urology Clinic	Wards		54466	
 Women's Health Clinic	Wards		54646	
 Weekend pager	Social Work			14048713045
@@ -138,7 +138,7 @@ Neurosurgery	Consult Pagers		50192
 OMFS	Consult Pagers		50372	
 Ortho	Consult Pagers		50329	
 Nephrology	Consult Pagers		50278	
-Palliative Care	Consult Pagers		512339	
+Palliative Care	Consult Pagers		12339	
 Palliative Care Oncology	Consult Pagers		50604	
 Rad|Onc	Consult Pagers		56373	
 Rheumatology	Consult Pagers		50581	
@@ -156,12 +156,12 @@ Shylika Glickman	Program Admin Staff			14042518791
 Chris Alspaugh	Program Admin Staff			14042518795
 GME Trustline | Duty Hrs	Program Admin Staff			8885945874
 Grady (1)	GMH Chief Residents			4046167030
-Grady(2)  	GMH Chief Residents			4046167027
-Emory GMH Chief Residents			4047272993
-Crawford Long   GMH Chief Residents			4046863260
-VA GMH Chief Residents			4042353000
-Cobb Atlanta-Area Hospitals			7707324000
-Decatur Hospital    Atlanta-Area Hospitals			4045016700
+Grady (2)  	GMH Chief Residents			4046167027
+Emory GMH Chief Residents			    4047272993
+Crawford Long   GMH Chief Residents		    	4046863260
+VA GMH Chief Residents			    4042353000
+Cobb Atlanta-Area Hospitals			    7707324000
+Decatur Hospital    Atlanta-Area Hospitals			    4045016700
 Douglasville Atlanta-Area Hospitals			7709491500
 Emory Adventist				7704340710
 Atlanta Medical Ctr				4042654000
@@ -198,19 +198,19 @@ Atlanta Medical Psych fax #	psych_hospitals			4042654389
 Anchor Hospital psych_hospitals			7709916044
 Anchor Hospital psych_hospitals			7709961900
 Georgia Regional Hospital psych_hospitals			4042432216
-Dekalb Crisis(Dekalb Residents Only)   psych_hospitals			4048924646
-Dekalb Crisis(Dekalb Residents Only)   psych_hospitals			4042940793
+Dekalb Crisis(Dekalb Residents Only)   psych_hospitals			4048924646" + "\n" + 
+@"Dekalb Crisis(Dekalb Residents Only)   psych_hospitals			4042940793
 Chaplain GENERAL			14047031670
 Chaplain GENERAL		54270	
 EPIC help   GENERAL		54357	
 IT Services GENERAL		51715	
-Long distance code GENERAL		5619931	
-Long distance code GENERAL		5460843	
+Long distance code GENERAL		619931	
+Long distance code GENERAL		460843	
 Needlestick GENERAL		57849	
 Rape Crisis GENERAL		54861	
 Rape Crisis GENERAL			14044153133
 Security 12th|call rm key)	GENERAL		54100	
-Transport GENERAL		534130	
+Transport GENERAL		34130	    
 Green POD ATTENDING ROOMS		57630	
 Orange POD ATTENDING ROOMS		57532	
 Purple POD ATTENDING ROOMS		58656	
@@ -218,10 +218,10 @@ International POD ATTENDING ROOMS		57050
 Yellow POD ATTENDING ROOMS		54410	
 Scheduling, MD line CLINICS		50446	
 Asthma/Allergy CLINICS		52590	
-Breast Clinic   CLINICS		54-9001	
+Breast Clinic   CLINICS		49001	
 Burn Center CLINICS		53714	
-Cancer Center   CLINICS		549105	
-Cancer Center   CLINICS		549104	
+Cancer Center   CLINICS		49105	
+Cancer Center   CLINICS		49104	
 Cardiology Clinic   CLINICS		54422	
 Cardiology Clinic   CLINICS		54327	
 Coumadin CLINICS		54428	
@@ -255,7 +255,8 @@ Echo PROCEDURES		53142
 Echo Reading Room PROCEDURES		54697	
 EEG PROCEDURES		54457	
 EMG Scheduling  PROCEDURES		59397	
-EMG Scheduling  PROCEDURES		58739	";
+EMG Scheduling  PROCEDURES		58739	
+";
 
     }
 }
