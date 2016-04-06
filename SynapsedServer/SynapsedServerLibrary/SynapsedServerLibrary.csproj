@@ -78,6 +78,11 @@
     <Compile Include="Defines\Global.cs" />
     <Compile Include="Security\Hashing.cs" />
     <Compile Include="Security\UniqueKeyGenerator.cs" />
+    <Compile Include="Tables\Accessors\Applications.cs" />
+    <Compile Include="Tables\Defines\DefinitionsApplicationMemberships.cs" />
+    <Compile Include="Tables\Defines\DefinitionsApplications.cs" />
+    <Compile Include="Tables\Model\Application.cs" />
+    <Compile Include="Tables\Model\ApplicationMembership.cs" />
     <Compile Include="Tables\Model\CommunityMembership.cs" />
     <Compile Include="Tables\Model\ContactMethod.cs" />
     <Compile Include="Tables\Model\DataObject.cs" />
