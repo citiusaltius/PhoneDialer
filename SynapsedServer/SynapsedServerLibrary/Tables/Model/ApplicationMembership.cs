@@ -113,9 +113,9 @@ namespace SynapsedServerLibrary.Tables.Model
                 switch (PropertyDictionary[Key].PropertyType.ToString())
                 {
                     case "ServerDaemonLibrary.Defines.Tables.DefinitionsApplicationMemberships+ApplicationMembershipTypes":
-                        throw new System.NotImplementedException();
-                        //this.ApplicationMembershipType = (DefinitionsCommunities.GetCommunityTypeFromString(Item[Key].S));
-                        //Output.AppendLine("Assigned: " + Key + " => " + PropertyDictionary[Key].GetValue(this));
+                        
+                        this.ApplicationMembershipType = (DefinitionsApplicationMemberships.GetApplicationMembershipTypeFromString(Item[Key].S));
+                        Output.AppendLine("Assigned: " + Key + " => " + PropertyDictionary[Key].GetValue(this));
                         break;
 
 

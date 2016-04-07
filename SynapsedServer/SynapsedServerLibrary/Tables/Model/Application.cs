@@ -7,9 +7,9 @@ namespace SynapsedServerLibrary.Tables.Model
 {
     public class Application : DataObject
     {
-        private DefinitionsCommunities _ThisTableDefinition = new DefinitionsCommunities();
+        private DefinitionsApplications _ThisTableDefinition = new DefinitionsApplications();
 
-        public new DefinitionsCommunities ThisTableDefinition
+        public new DefinitionsApplications ThisTableDefinition
         {
             get
             {
@@ -21,66 +21,54 @@ namespace SynapsedServerLibrary.Tables.Model
             }
         }
 
-        private int _CommunityId;
-        public int CommunityId
+        private int _ApplicationId;
+        public int ApplicationId
         {
             get
             {
-                return _CommunityId;
+                return _ApplicationId;
             }
             set
             {
-                _CommunityId = value;
+                _ApplicationId = value;
             }
         }
 
-        //public void SetCommunityId(int Id)
-        //{
-        //    this.CommunityId = Id;
-        //}
-
-        private string _CommunityName;
-        public string CommunityName
+        private string _ApplicationName;
+        public string ApplicationName
         {
             get
             {
-                return _CommunityName;
+                return _ApplicationName;
             }
             set
             {
-                _CommunityName = value;
+                _ApplicationName = value;
             }
         }
 
-        private DefinitionsCommunities.CommunityTypes _CommunityType;
-        public DefinitionsCommunities.CommunityTypes CommunityType
+        private DefinitionsApplications.ApplicationTypes _ApplicationType;
+        public DefinitionsApplications.ApplicationTypes ApplicationType
         {
             get
             {
-                return _CommunityType;
+                return _ApplicationType;
             }
             set
             {
-                _CommunityType = value;
+                _ApplicationType = value;
             }
         }
-        public string AddressStreet { get; private set; }
-        public string AddressAdditional { get; private set; }
-        public string AddressCity { get; private set; }
-        public string AddressStateRegionProvince { get; private set; }
-        public string AddressCountry { get; private set; }
-        public List<string> AcceptableWebDomains { get; private set; }
+        public string   ApplicationContactName { get; private set; }
+        public int      ApplicationContactEntityId { get; private set; }
+     
 
-        public Community()
+        public Application()
         {
-            ThisTableDefinition = new DefinitionsCommunities();
-            CommunityType = DefinitionsCommunities.CommunityTypes.Undefined;
-            AcceptableWebDomains = new List<string>();
-            AddressAdditional = "";
-            AddressCity = "";
-            AddressCountry = "";
-            AddressStateRegionProvince = "";
-            AddressStreet = "";
+            ThisTableDefinition = new DefinitionsApplications();
+            ApplicationType = DefinitionsApplications.ApplicationTypes.Undefined;
+            ApplicationContactName = "";
+            ApplicationContactEntityId = -1;
         }
 
 
@@ -97,10 +85,10 @@ namespace SynapsedServerLibrary.Tables.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("===Community===");
-            sb.AppendLine("CommunityId:\t\t" + CommunityId);
-            sb.AppendLine("CommunityName:\t" + CommunityName);
-            sb.AppendLine("CommunityType:\t" + CommunityType.ToString());
+            sb.AppendLine("===Application===");
+            sb.AppendLine("ApplicationId:\t\t" + ApplicationId);
+            sb.AppendLine("ApplicationName:\t" + ApplicationName);
+            sb.AppendLine("ApplicationType:\t" + ApplicationType.ToString());
             return sb.ToString() + base.ToString();
         }
 
@@ -123,8 +111,8 @@ namespace SynapsedServerLibrary.Tables.Model
                 }
                 switch (PropertyDictionary[Key].PropertyType.ToString())
                 {
-                    case "ServerDaemonLibrary.Defines.Tables.DefinitionsCommunities+CommunityTypes":
-                        this.CommunityType = (DefinitionsCommunities.GetCommunityTypeFromString(Item[Key].S));
+                    case "ServerDaemonLibrary.Defines.Tables.DefinitionsApplications+ApplicationTypes":
+                        this.ApplicationType = (DefinitionsApplications.GetApplicationTypeFromString(Item[Key].S));
                         Output.AppendLine("Assigned: " + Key + " => " + PropertyDictionary[Key].GetValue(this));
                         break;
 

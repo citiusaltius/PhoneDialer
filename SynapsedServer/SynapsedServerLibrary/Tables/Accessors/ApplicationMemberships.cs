@@ -6,31 +6,30 @@ using SynapsedServerLibrary.Utilities;
 
 namespace SynapsedServerLibrary.Tables.Accessors
 {
-    public class Applications : TableObject
+    public class ApplicationMemberships : TableObject
     {
-        new DefinitionsApplications ThisTableDefinition = new DefinitionsApplications();
+        new DefinitionsApplicationMemberships ThisTableDefinition = new DefinitionsApplicationMemberships();
 
-        public Applications()
+        public ApplicationMemberships()
         {
-            ThisTableDefinition = new DefinitionsApplications();
+            ThisTableDefinition = new DefinitionsApplicationMemberships();
         }
 
 
-        public Model.Application Create(Model.Application ObjectIn)
+        public Model.ApplicationMembership Create(Model.ApplicationMembership ObjectIn)
         {
-            
-            Debug.WriteLine("===Applications.Create===");
-            return (Model.Application)base.Create(ObjectIn, ThisTableDefinition.TableName);
+            Debug.WriteLine("===ApplicationMemberships.Create===");
+            return (Model.ApplicationMembership)base.Create(ObjectIn, ThisTableDefinition.TableName);
         }
 
-        public Model.Application Get(int ApplicationId)
+        public Model.ApplicationMembership Get(int ApplicationMembershipId)
         {
             Debug.WriteLine("===Application.Get===");
-            Debug.WriteLine("Retrieving for " + ApplicationId);
-            Model.Application retval = new Model.Application();
-            retval.ApplicationId = (ApplicationId);
+            Debug.WriteLine("Retrieving for " + ApplicationMembershipId);
+            Model.ApplicationMembership retval = new Model.ApplicationMembership();
+            retval.ApplicationMembershipId = (ApplicationMembershipId);
             GetItemRequest req = new GetItemRequest();
-            req.Key.Add(ThisTableDefinition.Index, new AttributeValue() { N = ApplicationId.ToString() });
+            req.Key.Add(ThisTableDefinition.Index, new AttributeValue() { N = ApplicationMembershipId.ToString() });
             req.TableName = ThisTableDefinition.TableName;
 
             GetItemResponse resp;
@@ -49,9 +48,9 @@ namespace SynapsedServerLibrary.Tables.Accessors
             return retval;
         }
 
-        public List<Model.Application> GetAll()
+        public List<Model.ApplicationMembership> GetAll()
         {
-            Debug.WriteLine("===Applications.GetAll===");
+            Debug.WriteLine("===ApplicationMembership.GetAll===");
 
             ScanRequest req = new ScanRequest();
             req.TableName = ThisTableDefinition.TableName;
@@ -69,12 +68,12 @@ namespace SynapsedServerLibrary.Tables.Accessors
                 throw e;
             }
 
-            List<Model.Application> AllApplications = new List<Model.Application>();
+            List<Model.ApplicationMembership> AllApplications = new List<Model.ApplicationMembership>();
             foreach (Dictionary<string, AttributeValue> Item in resp.Items)
             {
-                Model.Application NewApplication = new Model.Application();
-                NewApplication.LoadFromItem(Item);
-                AllApplications.Add(NewApplication);
+                Model.ApplicationMembership NewApplicationMembership = new Model.ApplicationMembership();
+                NewApplicationMembership.LoadFromItem(Item);
+                AllApplications.Add(NewApplicationMembership);
             }
             return AllApplications;
         }

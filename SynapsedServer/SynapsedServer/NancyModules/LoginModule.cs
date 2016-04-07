@@ -13,104 +13,104 @@ namespace SynapsedServer.NancyModules
         {
 
 
-            Get["/", true] = async (parameters, token) =>
-            {
-                StringBuilder ReturnedPage = new StringBuilder();
-                // spins for a little
-                await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
-                ReturnedPage.AppendLine(@"
-                <html>
-                <body>
-                <br /> <a href='/'>index</a> <br /> 
-                <h1> registration </h1>
-                <br /> 
-                <form id='login' action='/login/submit' method='post' accept-charset='UTF-8'>
-                <fieldset > 
-                <legend>Login</legend> 
-                <input type='hidden' name='submitted' id='submitted' value='1'/> 
-                <table>");
+//            Get["/", true] = async (parameters, token) =>
+//            {
+//                StringBuilder ReturnedPage = new StringBuilder();
+//                // spins for a little
+//                await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
+//                ReturnedPage.AppendLine(@"
+//                <html>
+//                <body>
+//                <br /> <a href='/'>index</a> <br /> 
+//                <h1> registration </h1>
+//                <br /> 
+//                <form id='login' action='/login/submit' method='post' accept-charset='UTF-8'>
+//                <fieldset > 
+//                <legend>Login</legend> 
+//                <input type='hidden' name='submitted' id='submitted' value='1'/> 
+//                <table>");
 
-                ReturnedPage.AppendLine(@"
-                <tr>
-                <td><label for= 'email' > e-mail address *:</label></td>
-                <td><input type = 'text' name = 'email' id = 'email' maxlength = '50' /></td>
-                </tr>
-                <tr>
-                <td><label for= 'password' > password *:</label ></td>
-                <td><input type = 'password' name = 'password' id = 'password' maxlength = '50' /></td>
-                </tr>
+//                ReturnedPage.AppendLine(@"
+//                <tr>
+//                <td><label for= 'email' > e-mail address *:</label></td>
+//                <td><input type = 'text' name = 'email' id = 'email' maxlength = '50' /></td>
+//                </tr>
+//                <tr>
+//                <td><label for= 'password' > password *:</label ></td>
+//                <td><input type = 'password' name = 'password' id = 'password' maxlength = '50' /></td>
+//                </tr>
 
-");
+//");
 
-                ReturnedPage.AppendLine(@"
-                </table>
-                <input type = 'submit' name = 'Submit' value = 'Submit' />
-                </fieldset >
-                </body>
-                </html>
-");
-                return ReturnedPage.ToString();
-            };
+//                ReturnedPage.AppendLine(@"
+//                </table>
+//                <input type = 'submit' name = 'Submit' value = 'Submit' />
+//                </fieldset >
+//                </body>
+//                </html>
+//");
+//                return ReturnedPage.ToString();
+//            };
 
-            Post["/submit", true] = async (parameters, token) =>
-            {
+            //Post["/submit", true] = async (parameters, token) =>
+            //{
 
-                StringBuilder ReturnedPage = new StringBuilder();
-                ReturnedPage.AppendLine("<h1>login submitted</h1>");
-                // spins for a little
-                await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
-                ReturnedPage.AppendLine(new System.IO.StreamReader(this.Request.Body).ReadToEnd());
-                string ValidationOutput;
-                SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials RetrievedCredentials;
-                bool IsValidated = ValidateLoginAndGetCredentials(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, out ValidationOutput, out RetrievedCredentials);
+            //    StringBuilder ReturnedPage = new StringBuilder();
+            //    ReturnedPage.AppendLine("<h1>login submitted</h1>");
+            //    // spins for a little
+            //    await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
+            //    ReturnedPage.AppendLine(new System.IO.StreamReader(this.Request.Body).ReadToEnd());
+            //    string ValidationOutput;
+            //    SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials RetrievedCredentials;
+            //    bool IsValidated = ValidateLoginAndGetCredentials(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, out ValidationOutput, out RetrievedCredentials);
 
-                if (IsValidated == false)
-                {
-                    ReturnedPage.AppendLine("<br/><h1>Login Failed</h1>");
-                    return ReturnedPage.ToString();
-                }
+            //    if (IsValidated == false)
+            //    {
+            //        ReturnedPage.AppendLine("<br/><h1>Login Failed</h1>");
+            //        return ReturnedPage.ToString();
+            //    }
 
-                ReturnedPage.AppendLine("<br/><h1>Login Successful</h1>");
-                ReturnedPage.AppendLine(RetrievedCredentials.AsJson());
-                ReturnedPage.AppendLine("<br/><hr><br/>");
-                System.Web.Script.Serialization.JavaScriptSerializer JsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                ReturnedPage.AppendLine(JsonSerializer.Serialize(RetrievedCredentials));
-                ReturnedPage.AppendLine(ValidationOutput);
-                return ReturnedPage.ToString();
-            };
+            //    ReturnedPage.AppendLine("<br/><h1>Login Successful</h1>");
+            //    ReturnedPage.AppendLine(RetrievedCredentials.AsJson());
+            //    ReturnedPage.AppendLine("<br/><hr><br/>");
+            //    System.Web.Script.Serialization.JavaScriptSerializer JsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            //    ReturnedPage.AppendLine(JsonSerializer.Serialize(RetrievedCredentials));
+            //    ReturnedPage.AppendLine(ValidationOutput);
+            //    return ReturnedPage.ToString();
+            //};
 
 
-            Post["/submit/mobile", true] = async (parameters, token) =>
-            {
-                StringBuilder ReturnedPage = new StringBuilder();
-                // spins for a little
-                await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
-                string ValidationOutput;
-                SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials RetrievedCredentials = new SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials();
-                bool IsValidated = false;
+            //Post["/submit/mobile", true] = async (parameters, token) =>
+            //{
+            //    StringBuilder ReturnedPage = new StringBuilder();
+            //    // spins for a little
+            //    await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
+            //    string ValidationOutput;
+            //    SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials RetrievedCredentials = new SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials();
+            //    bool IsValidated = false;
 
-                // If the request is valid, then validate the login
-                if (this.Request.Form.Email != "" &&
-                    this.Request.Form.Password != "" &&
-                    this.Request.Form.DeviceId != "")
-                {
-                    IsValidated = ValidateLoginAndGetCredentials(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, out ValidationOutput, out RetrievedCredentials);
-                }
+            //    // If the request is valid, then validate the login
+            //    if (this.Request.Form.Email != "" &&
+            //        this.Request.Form.Password != "" &&
+            //        this.Request.Form.DeviceId != "" &&
+            //        this.Request.Form.ApplicationId != "")
+            //    {
+            //        IsValidated = ValidateLoginAndGetCredentials(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, out ValidationOutput, out RetrievedCredentials);
+            //    }
 
-                ReturnedPage.AppendLine(RetrievedCredentials.AsJson());
+            //    ReturnedPage.AppendLine(RetrievedCredentials.AsJson());
 
-                if (IsValidated == true)
-                {
-                    //ReturnedPage.AppendLine("<br/><h1>Login Successful</h1>");
+            //    if (IsValidated == true)
+            //    {
+            //        //ReturnedPage.AppendLine("<br/><h1>Login Successful</h1>");
 
-                }
-                else
-                {
-                    //ReturnedPage.AppendLine("<br/><h1>Login Failed</h1>");
-
-                }
-                return ReturnedPage.ToString();
-            };
+            //    }
+            //    else
+            //    {
+            //        //ReturnedPage.AppendLine("<br/><h1>Login Failed</h1>");
+            //    }
+            //    return ReturnedPage.ToString();
+            //};
 
             Post["/submit/mobiletoken", true] = async (parameters, token) =>
             {
@@ -124,9 +124,11 @@ namespace SynapsedServer.NancyModules
                 // If the request is valid, then validate the login
                 if (this.Request.Form.Email != "" &&
                     this.Request.Form.Password != "" &&
-                    this.Request.Form.DeviceId != "")
+                    this.Request.Form.DeviceId != "" &&
+                    this.Request.Form.ApplicationId != ""
+                    )
                 {
-                    IsValidated = ValidateLoginAndGetToken(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, out ValidationOutput, out RetrievedToken);
+                    IsValidated = ValidateLoginAndGetToken(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, this.Request.Form.ApplicationId, out ValidationOutput, out RetrievedToken);
                 }
 
                 ReturnedPage.AppendLine(RetrievedToken.AsJson());
@@ -146,7 +148,7 @@ namespace SynapsedServer.NancyModules
 
         }
 
-        private bool ValidateLogin(string Email, string Password, string DeviceId, out string Output, out string CognitoId, out string OpenIdToken, out Entity ThisEntity)
+        private bool ValidateLogin(string Email, string Password, string DeviceId, string ApplicationId, out string Output, out string CognitoId, out string OpenIdToken, out Entity ThisEntity)
         {
             ThisEntity = new Entity();
             CognitoId = String.Empty;
@@ -162,6 +164,8 @@ namespace SynapsedServer.NancyModules
 
             List<ContactMethod> FoundContactMethods = ContactMethodsClient.FindByInformation(Email);
 
+
+            // Verify contact methods
             List<ContactMethod> ValidContactMethods = new List<ContactMethod>();
             List<ContactMethod> ExpiredContactMethods = new List<ContactMethod>();
             foreach (ContactMethod FoundContactMethod in FoundContactMethods)
@@ -179,6 +183,7 @@ namespace SynapsedServer.NancyModules
                 }
             }
 
+            // No valid contact methods
             if (ValidContactMethods.Count == 0)
             {
                 RetVal.AppendLine("<br/>No matching valid contact methods");
@@ -192,6 +197,7 @@ namespace SynapsedServer.NancyModules
                 return false;
             }
 
+            // Too many "valid" contact methods
             if (ValidContactMethods.Count > 1)
             {
                 RetVal.AppendLine("<br/>Error: too many active matching contact methods");
@@ -222,12 +228,11 @@ namespace SynapsedServer.NancyModules
                 {
                     continue;
                 }
-
                 ValidSecurityInfos.Add(ExaminedSecurityInfo);
-
             }
             Output = RetVal.ToString();
             SynapsedServerLibrary.Utilities.Debug.WriteLine(Output);
+
             // If no valid security information, break
             if (ValidSecurityInfos.Count == 0)
             {
@@ -243,10 +248,10 @@ namespace SynapsedServer.NancyModules
                 out CognitoId, out OpenIdToken);
             // Must have valid security info here
 
-            // Create UserDevice
-            SynapsedServerLibrary.Queues.UserDeviceQueue QueueToUse = new SynapsedServerLibrary.Queues.UserDeviceQueue();
-            QueueToUse.CognitoId = CognitoId;
-            QueueToUse.DeviceId = DeviceId;
+            //// Create UserDevice
+            //SynapsedServerLibrary.Queues.UserDeviceQueue QueueToUse = new SynapsedServerLibrary.Queues.UserDeviceQueue();
+            //QueueToUse.CognitoId = CognitoId;
+            //QueueToUse.DeviceId = DeviceId;
 
             //SynapsedServerLibrary.Utilities.Debug.WriteLine(ThisEntity.EntityCognitoId.Replace(":", "-") + "_" +                    DeviceId + "\n" +
 
@@ -293,7 +298,7 @@ namespace SynapsedServer.NancyModules
             return true;
         }
 
-        private bool ValidateLoginAndGetCredentials(string Email, string Password, string DeviceId, out string Output, out SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials RetrievedCredentials)
+        private bool ValidateLoginAndGetCredentials(string Email, string Password, string DeviceId, string ApplicationId, out string Output, out SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials RetrievedCredentials)
         {
             StringBuilder RetVal = new StringBuilder();
             Entity ThisEntity = new Entity();
@@ -302,7 +307,7 @@ namespace SynapsedServer.NancyModules
             string CognitoId = null;
             string OpenIdToken = null;
 
-            if (ValidateLogin(Email, Password, DeviceId, out TempOutput, out CognitoId, out OpenIdToken, out ThisEntity) == false)
+            if (ValidateLogin(Email, Password, DeviceId, ApplicationId, out TempOutput, out CognitoId, out OpenIdToken, out ThisEntity) == false)
             {
                 RetrievedCredentials = new SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials();
                 Output = TempOutput;
@@ -353,45 +358,45 @@ namespace SynapsedServer.NancyModules
 
             RetVal.AppendLine(RetrievedCredentials.PrintProperties(true));
 
-            SynapsedServerLibrary.Queues.UserQueues DeviceQueues = new SynapsedServerLibrary.Queues.UserQueues();
+            //SynapsedServerLibrary.Queues.UserQueues DeviceQueues = new SynapsedServerLibrary.Queues.UserQueues();
 
-            SynapsedServerLibrary.Queues.UserDeviceQueue DeviceSpecificQueue = new SynapsedServerLibrary.Queues.UserDeviceQueue();
-            DeviceSpecificQueue.CognitoId = CognitoId;
-            DeviceSpecificQueue.DeviceId = DeviceId;
+            //SynapsedServerLibrary.Queues.UserDeviceQueue DeviceSpecificQueue = new SynapsedServerLibrary.Queues.UserDeviceQueue();
+            //DeviceSpecificQueue.CognitoId = CognitoId;
+            //DeviceSpecificQueue.DeviceId = DeviceId;
 
-            SynapsedServerLibrary.Utilities.Debug.WriteLine(
-                "Email: " + Email + "\n" +
-                // Password + "\n" +
-                "DeviceId: " + DeviceId + "\n" +
-                "CognitoId: " + DeviceSpecificQueue.CognitoId + "\n" +
-                "DeviceId: " + DeviceSpecificQueue.DeviceId + "\n" +
-                "DeviceQueueName: " + DeviceSpecificQueue.DeviceQueueName
-            );
+            //SynapsedServerLibrary.Utilities.Debug.WriteLine(
+            //    "Email: " + Email + "\n" +
+            //    // Password + "\n" +
+            //    "DeviceId: " + DeviceId + "\n" +
+            //    "CognitoId: " + DeviceSpecificQueue.CognitoId + "\n" +
+            //    "DeviceId: " + DeviceSpecificQueue.DeviceId + "\n" +
+            //    "DeviceQueueName: " + DeviceSpecificQueue.DeviceQueueName
+            //);
 
-            List<string> Queues = DeviceQueues.List(DeviceSpecificQueue.DeviceQueueName);
-            if (Queues.Count == 0)
-            {
-                DeviceQueues.Create(DeviceSpecificQueue.DeviceQueueName);
-                SynapsedServerLibrary.Utilities.Debug.WriteLine("Queue created: " + DeviceSpecificQueue.DeviceQueueName);
+            //List<string> Queues = DeviceQueues.List(DeviceSpecificQueue.DeviceQueueName);
+            //if (Queues.Count == 0)
+            //{
+            //    DeviceQueues.Create(DeviceSpecificQueue.DeviceQueueName);
+            //    SynapsedServerLibrary.Utilities.Debug.WriteLine("Queue created: " + DeviceSpecificQueue.DeviceQueueName);
 
-                SynapsedServerLibrary.Queues.Model.ServerToDeviceQueueMessage QueueCreation = new SynapsedServerLibrary.Queues.Model.ServerToDeviceQueueMessage();
-                QueueCreation.Type = "InformativeMessage";
-                QueueCreation.Subtype = "QueueCreation";
-                QueueCreation.Information = "Queue was created at " + SynapsedServerLibrary.Defines.Global.UtcNowDateTimeFormatAmz();
+            //    SynapsedServerLibrary.Queues.Model.ServerToDeviceQueueMessage QueueCreation = new SynapsedServerLibrary.Queues.Model.ServerToDeviceQueueMessage();
+            //    QueueCreation.Type = "InformativeMessage";
+            //    QueueCreation.Subtype = "QueueCreation";
+            //    QueueCreation.Information = "Queue was created at " + SynapsedServerLibrary.Defines.Global.UtcNowDateTimeFormatAmz();
 
-                DeviceQueues.MessageSend(DeviceSpecificQueue.DeviceQueueName, QueueCreation);
+            //    DeviceQueues.MessageSend(DeviceSpecificQueue.DeviceQueueName, QueueCreation);
 
 
-            }
-            else
-            {
-                SynapsedServerLibrary.Utilities.Debug.WriteLine("Existing queues: " + Queues.Count);
-                SynapsedServerLibrary.Queues.Model.ServerToDeviceQueueMessage QueueExistence = new SynapsedServerLibrary.Queues.Model.ServerToDeviceQueueMessage();
-                QueueExistence.Type = "InformativeMessage";
-                QueueExistence.Subtype = "QueueAlreadyExists";
-                QueueExistence.Information = "Queue already created as of " + SynapsedServerLibrary.Defines.Global.UtcNowDateTimeFormatAmz();
-                DeviceQueues.MessageSend(DeviceSpecificQueue.DeviceQueueName, QueueExistence);
-            }
+            //}
+            //else
+            //{
+            //    SynapsedServerLibrary.Utilities.Debug.WriteLine("Existing queues: " + Queues.Count);
+            //    SynapsedServerLibrary.Queues.Model.ServerToDeviceQueueMessage QueueExistence = new SynapsedServerLibrary.Queues.Model.ServerToDeviceQueueMessage();
+            //    QueueExistence.Type = "InformativeMessage";
+            //    QueueExistence.Subtype = "QueueAlreadyExists";
+            //    QueueExistence.Information = "Queue already created as of " + SynapsedServerLibrary.Defines.Global.UtcNowDateTimeFormatAmz();
+            //    DeviceQueues.MessageSend(DeviceSpecificQueue.DeviceQueueName, QueueExistence);
+            //}
             Output = RetVal.ToString();
             return true;
         }

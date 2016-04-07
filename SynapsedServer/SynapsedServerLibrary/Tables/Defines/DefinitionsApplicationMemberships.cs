@@ -21,5 +21,19 @@ namespace SynapsedServerLibrary.Tables.Defines
             Administrator,
             Member
         };
+
+        public static ApplicationMembershipTypes GetApplicationMembershipTypeFromString(string TypeString)
+        {
+            List<string> TypeStrings = new List<string>(Enum.GetNames(typeof(ApplicationMembershipTypes)));
+            int EnumIndex = TypeStrings.IndexOf(TypeString);
+            if (EnumIndex < 0)
+            {
+                throw new Utilities.Exceptions.ServerException("Invalid ApplicationMembershipTypes");
+            }
+            else
+            {
+                return (ApplicationMembershipTypes)EnumIndex;
+            }
+        }
     }
 }

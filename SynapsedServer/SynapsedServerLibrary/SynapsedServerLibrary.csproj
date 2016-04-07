@@ -78,6 +78,7 @@
     <Compile Include="Defines\Global.cs" />
     <Compile Include="Security\Hashing.cs" />
     <Compile Include="Security\UniqueKeyGenerator.cs" />
+    <Compile Include="Tables\Accessors\ApplicationMemberships.cs" />
     <Compile Include="Tables\Accessors\Applications.cs" />
     <Compile Include="Tables\Defines\DefinitionsApplicationMemberships.cs" />
     <Compile Include="Tables\Defines\DefinitionsApplications.cs" />
@@ -128,6 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Queues\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
