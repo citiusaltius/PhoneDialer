@@ -13,71 +13,78 @@ namespace SynapsedServer.NancyModules
         {
 
 
-//            Get["/", true] = async (parameters, token) =>
-//            {
-//                StringBuilder ReturnedPage = new StringBuilder();
-//                // spins for a little
-//                await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
-//                ReturnedPage.AppendLine(@"
-//                <html>
-//                <body>
-//                <br /> <a href='/'>index</a> <br /> 
-//                <h1> registration </h1>
-//                <br /> 
-//                <form id='login' action='/login/submit' method='post' accept-charset='UTF-8'>
-//                <fieldset > 
-//                <legend>Login</legend> 
-//                <input type='hidden' name='submitted' id='submitted' value='1'/> 
-//                <table>");
+            Get["/", true] = async (parameters, token) =>
+            {
+                StringBuilder ReturnedPage = new StringBuilder();
+                            // spins for a little
+                            await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
+                ReturnedPage.AppendLine(@"
+                            <html>
+                            <body>
+                            <br /> <a href='/'>index</a> <br /> 
+                            <h1> registration </h1>
+                            <br /> 
+                            <form id='login' action='/login/submit' method='post' accept-charset='UTF-8'>
+                            <fieldset > 
+                            <legend>Login</legend> 
+                            <input type='hidden' name='submitted' id='submitted' value='1'/> 
+                            <table>");
 
-//                ReturnedPage.AppendLine(@"
-//                <tr>
-//                <td><label for= 'email' > e-mail address *:</label></td>
-//                <td><input type = 'text' name = 'email' id = 'email' maxlength = '50' /></td>
-//                </tr>
-//                <tr>
-//                <td><label for= 'password' > password *:</label ></td>
-//                <td><input type = 'password' name = 'password' id = 'password' maxlength = '50' /></td>
-//                </tr>
+                ReturnedPage.AppendLine(@"
+                            <tr>
+                            <td><label for= 'email' > e-mail address *:</label></td>
+                            <td><input type = 'text' name = 'email' id = 'email' maxlength = '50' /></td>
+                            </tr>
+                            <tr>
+                            <td><label for= 'password' > password *:</label ></td>
+                            <td><input type = 'password' name = 'password' id = 'password' maxlength = '50' /></td>
+                            </tr>
+                            <tr>
+                            <td><label for= 'password' > deviceid *:</label ></td>
+                            <td><input type = 'text' name = 'deviceid' id = 'deviceid' maxlength = '50' /></td>
+                            </tr>
+                            <tr>
+                            <td><label for= 'applicationid' > applicationid *:</label ></td>
+                            <td><input type = 'applicationid' name = 'applicationid' id = 'applicationid' maxlength = '50' /></td>
+                            </tr>
+            ");
 
-//");
+                ReturnedPage.AppendLine(@"
+                            </table>
+                            <input type = 'submit' name = 'Submit' value = 'Submit' />
+                            </fieldset >
+                            </body>
+                            </html>
+            ");
+                return ReturnedPage.ToString();
+            };
 
-//                ReturnedPage.AppendLine(@"
-//                </table>
-//                <input type = 'submit' name = 'Submit' value = 'Submit' />
-//                </fieldset >
-//                </body>
-//                </html>
-//");
-//                return ReturnedPage.ToString();
-//            };
+            Post["/submit", true] = async (parameters, token) =>
+            {
 
-            //Post["/submit", true] = async (parameters, token) =>
-            //{
+                StringBuilder ReturnedPage = new StringBuilder();
+                ReturnedPage.AppendLine("<h1>login submitted</h1>");
+                // spins for a little
+                await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
+                ReturnedPage.AppendLine(new System.IO.StreamReader(this.Request.Body).ReadToEnd());
+                string ValidationOutput;
+                SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials RetrievedCredentials;
+                bool IsValidated = ValidateLoginAndGetCredentials(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, this.Request.Form.ApplicationId, out ValidationOutput, out RetrievedCredentials);
 
-            //    StringBuilder ReturnedPage = new StringBuilder();
-            //    ReturnedPage.AppendLine("<h1>login submitted</h1>");
-            //    // spins for a little
-            //    await Task.Run(() => { for (int i = 0; i < 1; i++) { } });
-            //    ReturnedPage.AppendLine(new System.IO.StreamReader(this.Request.Body).ReadToEnd());
-            //    string ValidationOutput;
-            //    SynapsedServerLibrary.AuthenticationAndIdentity.Model.ServerCredentials RetrievedCredentials;
-            //    bool IsValidated = ValidateLoginAndGetCredentials(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, out ValidationOutput, out RetrievedCredentials);
+                if (IsValidated == false)
+                {
+                    ReturnedPage.AppendLine("<br/><h1>Login Failed</h1>");
+                    return ReturnedPage.ToString();
+                }
 
-            //    if (IsValidated == false)
-            //    {
-            //        ReturnedPage.AppendLine("<br/><h1>Login Failed</h1>");
-            //        return ReturnedPage.ToString();
-            //    }
-
-            //    ReturnedPage.AppendLine("<br/><h1>Login Successful</h1>");
-            //    ReturnedPage.AppendLine(RetrievedCredentials.AsJson());
-            //    ReturnedPage.AppendLine("<br/><hr><br/>");
-            //    System.Web.Script.Serialization.JavaScriptSerializer JsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-            //    ReturnedPage.AppendLine(JsonSerializer.Serialize(RetrievedCredentials));
-            //    ReturnedPage.AppendLine(ValidationOutput);
-            //    return ReturnedPage.ToString();
-            //};
+                ReturnedPage.AppendLine("<br/><h1>Login Successful</h1>");
+                ReturnedPage.AppendLine(RetrievedCredentials.AsJson());
+                ReturnedPage.AppendLine("<br/><hr><br/>");
+                System.Web.Script.Serialization.JavaScriptSerializer JsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+                ReturnedPage.AppendLine(JsonSerializer.Serialize(RetrievedCredentials));
+                ReturnedPage.AppendLine(ValidationOutput);
+                return ReturnedPage.ToString();
+            };
 
 
             //Post["/submit/mobile", true] = async (parameters, token) =>
@@ -95,7 +102,7 @@ namespace SynapsedServer.NancyModules
             //        this.Request.Form.DeviceId != "" &&
             //        this.Request.Form.ApplicationId != "")
             //    {
-            //        IsValidated = ValidateLoginAndGetCredentials(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, out ValidationOutput, out RetrievedCredentials);
+            //        IsValidated = ValidateLoginAndGetCredentials(this.Request.Form.Email, this.Request.Form.Password, this.Request.Form.DeviceId, this.Request.Form.ApplicationId, out ValidationOutput, out RetrievedCredentials);
             //    }
 
             //    ReturnedPage.AppendLine(RetrievedCredentials.AsJson());
