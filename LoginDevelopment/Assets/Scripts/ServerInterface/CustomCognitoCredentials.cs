@@ -98,6 +98,7 @@ namespace Assets.Scripts.ServerInterface
             Form.AddField("Email", Email);
             Form.AddField("Password", Password);
             Form.AddField("DeviceId", DeviceId);
+            Form.AddField("ApplicationId", Defines.Global.ApplicationId.ToString());
             Form.AddField("DeviceType", SystemInfo.deviceType.ToString());
             Form.AddField("DeviceModel", SystemInfo.deviceModel.ToString());
             Form.AddField("OperatingSystem", SystemInfo.operatingSystem.ToString());
@@ -129,6 +130,7 @@ namespace Assets.Scripts.ServerInterface
 
             string response = www.text;
             //ProjectPage.Scripts.Utilities.Debug.WriteLine("ContactProvider response text: " + www.text);
+            Debug.Log(response);
             JsonData json = JsonMapper.ToObject(response);
 
 

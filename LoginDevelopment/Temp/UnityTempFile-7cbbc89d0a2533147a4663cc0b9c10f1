@@ -5,8 +5,11 @@
 -r:"G:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll"
 -r:"G:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll"
 -r:"G:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll"
--r:Assets/Plugins/Mono.Data.Sqlite.dll
--r:Assets/Plugins/System.Data.dll
+-r:Assets/AWSSDK/AWSSDK.CognitoIdentity.dll
+-r:Assets/AWSSDK/AWSSDK.Core.dll
+-r:Assets/AWSSDK/AWSSDK.S3.dll
+-r:Assets/AWSSDK/AWSSDK.SecurityToken.dll
+-r:Assets/AWSSDK/AWSSDK.SQS.dll
 -r:"G:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll"
 -define:UNITY_5_3_2
 -define:UNITY_5_3
@@ -76,27 +79,16 @@
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_WIN
-Assets/Scripts/Data/DataStore.cs
-Assets/Scripts/Data/Defines.cs
-Assets/Scripts/Data/DirectoryData/DefaultData.cs
-Assets/Scripts/Data/Model/DirectoryEntry.cs
-Assets/Scripts/Scenes/SceneSwitcher.cs
-Assets/Scripts/UI/BackScreenBehaviourScript.cs
-Assets/Scripts/UI/ButtonAboutBehaviourScript.cs
-Assets/Scripts/UI/ButtonBehaviourBackspace.cs
-Assets/Scripts/UI/ButtonBehaviourMenu.cs
-Assets/Scripts/UI/ButtonBehaviourQuit.cs
-Assets/Scripts/UI/ButtonBehaviourSendAnEmail.cs
-Assets/Scripts/UI/ButtonHistoryBehaviour.cs
-Assets/Scripts/UI/ButtonLoginBehaviour.cs
-Assets/Scripts/UI/DirectoryLocationDropdownBehaviour.cs
-Assets/Scripts/UI/DirectoryLocationDropdownOptionData.cs
-Assets/Scripts/UI/GameObjectBehaviourForcePortrait.cs
-Assets/Scripts/UI/PanelDirectoryEntryBehaviour.cs
-Assets/Scripts/UI/ScenePhoneDialer/ButtonBehaviourCall.cs
-Assets/Scripts/UI/ScenePhoneDialer/LoadDirectoryBehaviourScript.cs
-Assets/Scripts/UI/ScenePhoneDialer/PhoneKeypadButtonBehaviour.cs
-Assets/Scripts/UI/ScrollViewBehaviourHistory.cs
-Assets/Scripts/UI/ScrollViewDirectoryBehaviour.cs
+Assets/Examples/S3Example.cs
+Assets/Examples/SQSExample.cs
+Assets/Scripts/Defines/Global.cs
+Assets/Scripts/Model/Base/BaseObject.cs
+Assets/Scripts/ServerInterface/CustomCognitoCredentials.cs
+Assets/Scripts/ServerInterface/ServerAuthentication.cs
+Assets/Scripts/UI/ButtonBehaviourForgotPassword.cs
+Assets/Scripts/UI/ButtonBehaviourLogin.cs
+Assets/Scripts/UI/ButtonBehaviourRegister.cs
+Assets/Scripts/Utilities/Debug.cs
+Assets/Scripts/Utilities/MainThreadDispatcher.cs
 -r:"G:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"G:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"

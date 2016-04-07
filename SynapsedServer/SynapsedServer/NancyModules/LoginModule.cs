@@ -135,13 +135,11 @@ namespace SynapsedServer.NancyModules
 
                 if (IsValidated == true)
                 {
-                    //ReturnedPage.AppendLine("<br/><h1>Login Successful</h1>");
-
+                    ReturnedPage.AppendLine("<br/><h1>Login Successful</h1>");
                 }
                 else
                 {
-                    //ReturnedPage.AppendLine("<br/><h1>Login Failed</h1>");
-
+                    ReturnedPage.AppendLine("<br/><h1>Login Failed</h1>");
                 }
                 return ReturnedPage.ToString();
             };
@@ -220,6 +218,7 @@ namespace SynapsedServer.NancyModules
             string HashedPassword = Hasher.PasswordHash(ThisEntity.EntitySalt, Password);
             List<SecurityInfo> SecurityInfos = SecurityInformationClient.FindByInformation(ThisEntity.EntityId, HashedPassword);
 
+            // Validate security information
             List<SecurityInfo> ValidSecurityInfos = new List<SecurityInfo>();
             foreach (SecurityInfo ExaminedSecurityInfo in SecurityInfos)
             {
@@ -334,7 +333,7 @@ namespace SynapsedServer.NancyModules
             return true;
         }
 
-        private bool ValidateLoginAndGetToken(string Email, string Password, string DeviceId, out string Output, out SynapsedServerLibrary.AuthenticationAndIdentity.Model.IdentityIdOpenIdToken RetrievedCredentials)
+        private bool ValidateLoginAndGetToken(string Email, string Password, string DeviceId, string ApplicationId, out string Output, out SynapsedServerLibrary.AuthenticationAndIdentity.Model.IdentityIdOpenIdToken RetrievedCredentials)
         {
             StringBuilder RetVal = new StringBuilder();
             Entity ThisEntity = new Entity();
@@ -343,7 +342,7 @@ namespace SynapsedServer.NancyModules
             string OpenIdToken = "";
 
 
-            if (ValidateLogin(Email, Password, DeviceId, out TempOutput, out CognitoId, out OpenIdToken, out ThisEntity) == false)
+            if (ValidateLogin(Email, Password, DeviceId, ApplicationId, out TempOutput, out CognitoId, out OpenIdToken, out ThisEntity) == false)
             {
                 RetrievedCredentials = new SynapsedServerLibrary.AuthenticationAndIdentity.Model.IdentityIdOpenIdToken("", "");
                 Output = TempOutput;
