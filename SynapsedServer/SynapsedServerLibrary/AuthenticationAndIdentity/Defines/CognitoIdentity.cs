@@ -8,7 +8,8 @@ namespace SynapsedServerLibrary.AuthenticationAndIdentity.Defines
 {
     class CognitoIdentity
     {
-        public const string IdentityPoolId = "us-east-1:b6fa21f2-7b1e-49af-ac53-87e24692e6d9";
-        public const string DeveloperProviderName = "entities.IyerWong.ProjectPage";
+        public const string IdentityPoolId          = "us-east-1:bf188f97-1103-440d-9773-0af13b61f79b";
+        // arn:aws:iam::201495243221:role/Cognito_SynappsedAuth_Role
+        public const string DeveloperProviderName   = "login.iyerwong.synappsed";
     }
 }
