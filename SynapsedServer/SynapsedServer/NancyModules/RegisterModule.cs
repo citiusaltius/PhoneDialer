@@ -110,10 +110,10 @@ namespace SynapsedServer.NancyModules
                 <h1> registration </h1>
                 <br /> 
                 ");
-                foreach (string Key in this.Request.Headers.Keys)
-                {
-                    ReturnedPage.AppendLine("<br /> Header: " + Key + " : " + this.Request.Headers[Key] + "<br/>");
-                }
+                //foreach (string Key in this.Request.Headers.Keys)
+                //{
+                //    ReturnedPage.AppendLine("<br /> Header: " + Key + " : " + this.Request.Headers[Key] + "<br/>");
+                //}
 
                 ReturnedPage.AppendLine(@"<br /> <br />");
                 ReturnedPage.AppendLine(new System.IO.StreamReader(this.Request.Body).ReadToEnd());
@@ -124,7 +124,7 @@ namespace SynapsedServer.NancyModules
                 ReturnedPage.AppendLine("<br/>telephone:\t" + this.Request.Form.telephone);
                 ReturnedPage.AppendLine("<br/>email:\t" + this.Request.Form.email);
                 ReturnedPage.AppendLine("<br/>password:\t" + this.Request.Form.password);
-                ReturnedPage.AppendLine("<br/>password:\t" + this.Request.Form.passwordConfirm);
+                ReturnedPage.AppendLine("<br/>confirm password:\t" + this.Request.Form.passwordConfirm);
 
                 //sanity checks
                 {
